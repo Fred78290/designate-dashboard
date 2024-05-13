@@ -4,7 +4,7 @@ function install_designatedashboard {
     setup_develop ${DESIGNATEDASHBOARD_DIR}
 
     for panel in ${DASHABOARD_FILES[@]}; do
-        cp $DESIGNATEDASHBOARD_DIR/designatedashboard/enabled/$panel \
+        ln -fs $DESIGNATEDASHBOARD_DIR/designatedashboard/enabled/$panel \
 			$HORIZON_DIR/openstack_dashboard/local/enabled/$panel
     done
 }
